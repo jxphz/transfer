@@ -1,55 +1,119 @@
-  <!DOCTYPE html>
-   <html lang="zh-CN">
-   <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>欢迎访问</title>
-<style>
- body {
-background-size: cover;
-background-attachment: fixed;
-background-position: center;
-background-repeat: no-repeat;
-}
-body {
-font-family: Arial, sans-serif;
-margin: 0;
-padding: 0;
-background-color: #f4f4f4;
-}
-.container {
-width: 80%;
-max-width: 600px;
-margin: 50px auto;
-padding: 20px;
-background-color: #fff;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-</style>
-   </head>
-   
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欢迎访问</title>
+    <style>
+        /* 基础重置 */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.6; color: #333; background-color: #f9f9f9; }
+        a { color: #409eff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        
+        /* 容器 */
+        .container { max-width: 960px; margin: 0 auto; background: #fff; min-height: 100vh; display: flex; flex-direction: column; }
 
-   <body>
-	   
-<!-- 网页内容 -->
+        /* 头部 */
+        header { text-align: center; padding: 40px 20px; border-bottom: 1px solid #eee; }
+        header h1 { margin: 0; font-size: 2.5em; color: #409eff; }
+        header p { margin-top: 10px; color: #666; }
 
-<!-- <div class="container" id="myDiv">
-<!-- 多个线路按钮 -->
-<!-- <button id="myButton">线路一</button>
-<button id="myButton">线路二</button>
-<button id="myButton">线路三</button>
-<button id="myButton">线路四</button> -->
-<!--</div> -->
-	<script>
-	   var ua = navigator.userAgent.toLowerCase ();
-	   var isWeixin = (ua.indexOf ('micromessenger') > -1);
-	   if (isWeixin) {
-		   var bodyElement = document.body ;
-		   var backgroundImage = "https://innixz.oss-cn-beijing.aliyuncs.com/aadbc34f420486aa3acebd17f202b56.png";
-		   bodyElement.style.backgroundImage  = `url(${backgroundImage})`;
-	   } else {
-			location.href  = 'https://td.lumayun.vip/AfPWtCxiazai';
-	   } 
-	</script>
-   </body>
+        /* 导航栏 */
+        nav { background: #409eff; }
+        nav ul { display: flex; justify-content: center; list-style: none; }
+        nav li { margin: 0; }
+        nav a { display: block; padding: 15px 20px; color: #fff; font-weight: bold; }
+        nav a:hover { background: #66b1ff; }
+
+        /* 主体内容区 */
+        .content { flex: 1; display: flex; padding: 20px; gap: 20px; }
+        
+        /* 文章列表 */
+        .post-list { flex: 3; }
+        .post-item { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+        .post-item h2 { margin: 0 0 5px; font-size: 1.5em; }
+        .post-item .meta { color: #999; font-size: 0.9em; margin-bottom: 10px; }
+        .post-item p { margin: 0; }
+
+        /* 侧边栏 */
+        .sidebar { flex: 1; background: #f5f5f5; padding: 20px; border-radius: 8px; }
+        .sidebar h2 { margin-top: 0; font-size: 1.2em; }
+        .sidebar ul { list-style: none; padding: 0; }
+        .sidebar li { margin-bottom: 8px; }
+
+        /* 底部 */
+        footer { text-align: center; padding: 15px 0; margin-top: 20px; color: #777; border-top: 1px solid #eee; }
+        footer p { margin: 0; font-size: 0.9em; }
+
+        /* 响应式布局 */
+        @media (max-width: 768px) {
+            .content { flex-direction: column; }
+            nav ul { flex-direction: column; }
+            nav a { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 顶部标题 -->
+        <header>
+            <h1>你的名字</h1>
+            <p>这里是你的个人简介或座右铭</p>
+        </header>
+
+        <!-- 导航栏 -->
+        <nav>
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">关于我</a></li>
+                <li><a href="#">技术博客</a></li>
+                <li><a href="#">随笔</a></li>
+                <li><a href="#">联系</a></li>
+            </ul>
+        </nav>
+
+        <!-- 主体内容区域 -->
+        <div class="content">
+            <!-- 文章列表 -->
+            <section class="post-list">
+                <article class="post-item">
+                    <h2><a href="#">欢迎来到我的博客</a></h2>
+                    <p class="meta">2025-12-30 • 分类：随笔</p>
+                    <p>这里是博客的第一篇文章。您可以在这里写下对技术的见解、生活的感悟，或是分享您的作品。</p>
+                </article>
+
+                <article class="post-item">
+                    <h2><a href="#">技术文章标题</a></h2>
+                    <p class="meta">2025-12-29 • 分类：技术</p>
+                    <p>这里是技术文章的摘要。比如介绍一下 Python、JavaScript，或是前端框架的学习笔记。</p>
+                </article>
+            </section>
+
+            <!-- 侧边栏 -->
+            <aside class="sidebar">
+                <section>
+                    <h2>关于我</h2>
+                    <p>简单的个人介绍。可以放置一张头像图片，或是您的职业标签。</p>
+                </section>
+
+                <section>
+                    <h2>标签云</h2>
+                    <ul>
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>HTML/CSS</li>
+                        <li>生活</li>
+                        <li>读书</li>
+                    </ul>
+                </section>
+            </aside>
+        </div>
+
+        <!-- 页脚 -->
+        <footer>
+            <p>© 2025 你的名字 | 版权所有</p>
+        </footer>
+    </div>
+</body>
 </html>
